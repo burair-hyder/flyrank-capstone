@@ -27,22 +27,19 @@ The technology stack may be refined once the final capstone requirements are con
 
 ## Getting Started
 
+The repository is in the setup phase. There is no `package.json` yet, so only the clone step below works today.
+
 Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/burair-hyder/flyrank-capstone
 cd flyrank-capstone
 ```
 
-Install dependencies after the application has been initialized:
+After the React/TypeScript application is initialized, install dependencies and start the development server:
 
 ```bash
 npm install
-```
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
