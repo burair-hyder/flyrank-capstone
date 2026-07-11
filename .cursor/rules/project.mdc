@@ -1,3 +1,143 @@
 ---
+description: Development standards and AI instructions for the FlyRank capstone project
 alwaysApply: true
 ---
+
+# Project Overview
+
+This repository contains a capstone project developed during the FlyRank internship track.
+
+AI-assisted development is permitted, but every generated change must be reviewed before it is committed.
+
+# Technology Stack
+
+The planned technology stack is:
+
+* Node.js LTS
+* TypeScript
+* React
+* npm
+* Git and GitHub
+
+Do not introduce a new framework, package manager, database, or major dependency without first explaining why it is necessary.
+
+# Coding Conventions
+
+* Use TypeScript instead of JavaScript where practical.
+* Prefer clear and descriptive names.
+* Keep functions small and focused.
+* Avoid duplicated logic.
+* Use `const` by default.
+* Use `let` only when reassignment is necessary.
+* Avoid `any` unless there is a documented reason.
+* Handle expected errors explicitly.
+* Keep each file or component focused on one responsibility.
+* Add comments only when the reasoning is not obvious from the code.
+* Preserve existing project conventions when editing files.
+
+# File Naming
+
+* React components: `PascalCase.tsx`
+* TypeScript utility files: `camelCase.ts`
+* Test files: `*.test.ts` or `*.test.tsx`
+* Environment template: `.env.example`
+* Constants should have clear and descriptive names.
+
+# Git Conventions
+
+Use Conventional Commits in this format:
+
+```text
+type(optional-scope): concise description
+```
+
+Preferred commit types:
+
+* `feat`: add a new feature
+* `fix`: correct a defect
+* `docs`: change documentation
+* `test`: add or update tests
+* `refactor`: restructure code without changing its behaviour
+* `style`: make formatting-only changes
+* `chore`: perform maintenance or configuration work
+* `build`: change the build system or dependencies
+* `ci`: change continuous-integration configuration
+
+Examples:
+
+```text
+feat(auth): add login form validation
+fix(api): handle failed network requests
+docs: improve setup instructions
+test(utils): add date formatter tests
+chore: configure project tooling
+```
+
+Keep each commit focused on one logical change.
+
+# Security Rules
+
+* Never commit passwords, API keys, access tokens, or private credentials.
+* Store local secrets in `.env`.
+* Maintain a `.env.example` file containing placeholder values only.
+* Validate user input.
+* Do not expose server-side secrets in client-side code.
+* Identify potential security issues before implementing risky changes.
+
+# AI Assistant Instructions
+
+Before editing:
+
+1. Inspect the relevant files.
+2. Briefly explain the proposed change.
+3. Follow the existing project conventions.
+4. Avoid unnecessary dependencies.
+5. Do not make unrelated changes.
+6. Ask before making a major architectural change.
+
+After editing:
+
+1. Summarize the files changed.
+2. Explain what was improved.
+3. Run available formatting, linting, testing, and build commands.
+4. Report any command that could not be run.
+5. Identify remaining assumptions or risks.
+6. Suggest an appropriate Conventional Commit message.
+
+# Project-Specific AI Rules for the Settings Form
+
+## Coding conventions for this project
+
+* Keep settings-form logic in the typed validator flow used by src/utils/validateSettings.ts. Do not move validation rules into the component file unless the change is explicitly about presentation.
+* Preserve the existing naming style for this app: use camelCase for helpers such as validateSettings, isSettingsFormValid, and defaultSettingsValues, and keep field names aligned with the form state shape.
+* Prefer small, composable changes that fit the current structure of the settings form instead of replacing it with a new pattern.
+
+## Validation and testing expectations
+
+* Any change to form validation must be implemented in the validator module first and then reflected in src/utils/validateSettings.test.ts. Do not rely on visual behavior alone to prove a rule works.
+* Treat whitespace-only values as empty input for required fields such as name and email, and add tests for those edge cases instead of assuming the UI will handle them.
+* When changing validation for email, name, password, or bio-related rules, add or update explicit tests for both passing and failing cases.
+
+## Accessibility requirements
+
+* Keep the settings form accessible by using visible labels with matching htmlFor/id wiring, semantic form controls, and error messages that are programmatically associated with the relevant field.
+* When a field is invalid, set aria-invalid and connect the error text with aria-describedby so assistive technologies announce the problem.
+* Preserve keyboard accessibility for checkbox-based controls such as email notifications and ensure their labels remain clickable.
+
+## Reviewing AI-generated code
+
+* Before accepting AI-generated changes, check for duplicated validation logic, missing test coverage, and accessibility gaps that would be easy to miss in a quick review.
+* Pay special attention to the issues already surfaced in this project: whitespace-only names should not be accepted as valid, validation rules should stay centralized, and UI changes should not silently remove test coverage.
+* If AI output introduces a new validation path or a new form field, verify that the change is covered by tests and still matches the existing component structure.
+
+# Completion Checklist
+
+Before considering a task complete, confirm that:
+
+* The requested change has been implemented.
+* Existing functionality has not knowingly been broken.
+* TypeScript errors have been addressed.
+* Formatting and linting pass when configured.
+* Tests pass when available.
+* Documentation has been updated where necessary.
+* No secrets or generated files are being committed.
