@@ -1,68 +1,80 @@
 import Link from "next/link";
 
-const features = [
-  "Responsive application shell",
-  "Routed placeholder screens",
-  "Server Components by default",
-  "Tailwind design tokens",
-  "Deployment health check",
+const systems = [
+  "AI-powered suspect interviews",
+  "Interactive evidence board",
+  "Explorable locations",
+  "Case timelines and contradictions",
+  "Detective notebook and theories",
+  "AI-evaluated final accusations",
 ];
 
 export default function HomePage() {
   return (
-    <section className="grid min-h-[75vh] items-center gap-12 py-10 lg:grid-cols-2">
+    <section className="grid min-h-[78vh] items-center gap-12 py-10 xl:grid-cols-[1.1fr_0.9fr]">
       <div>
-        <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">
-          Foundations phase
-        </span>
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-400">
+          Detective Intelligence System
+        </p>
 
-        <h1 className="mt-6 max-w-3xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-          Organize your work with TaskFlow
+        <h1 className="mt-6 max-w-4xl text-4xl font-bold tracking-tight text-stone-100 sm:text-5xl lg:text-7xl">
+          Every suspect has a story.
+          <span className="block text-stone-500">
+            Not every story is true.
+          </span>
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-          A responsive task-management dashboard for planning work, tracking
-          deadlines, and reviewing productivity.
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-400">
+          Investigate structured mysteries, interrogate AI-controlled suspects,
+          connect evidence, expose contradictions, and submit your final theory.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
-            href="/dashboard"
-            className="rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700"
+            href="/cases/the-midnight-gallery/briefing"
+            className="rounded-xl bg-amber-400 px-5 py-3 font-semibold text-stone-950 transition hover:bg-amber-300"
           >
-            Open dashboard
+            Begin Investigation
           </Link>
 
           <Link
-            href="/health"
-            className="rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-700 transition hover:bg-slate-100"
+            href="/cases"
+            className="rounded-xl border border-stone-700 bg-stone-900 px-5 py-3 font-semibold text-stone-200 transition hover:border-stone-600 hover:bg-stone-800"
           >
-            Check system health
+            Browse Case Files
           </Link>
         </div>
       </div>
 
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <h2 className="text-xl font-bold text-slate-950">
-          Foundation completed
-        </h2>
+      <div className="rounded-3xl border border-stone-800 bg-stone-900/70 p-6 shadow-2xl shadow-black/30 sm:p-8">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-400">
+              Active Case
+            </p>
 
-        <ul className="mt-6 space-y-4">
-          {features.map((feature) => (
+            <h2 className="mt-3 text-2xl font-bold text-stone-100">
+              The Midnight Gallery
+            </h2>
+
+            <p className="mt-2 text-sm leading-6 text-stone-500">
+              A priceless painting has disappeared, its owner has been attacked,
+              and four guests are hiding more than they admit.
+            </p>
+          </div>
+
+          <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-300">
+            Medium
+          </span>
+        </div>
+
+        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          {systems.map((system) => (
             <li
-              key={feature}
-              className="flex items-center gap-3 rounded-xl bg-slate-50 p-4"
+              key={system}
+              className="rounded-xl border border-stone-800 bg-stone-950/70 p-4 text-sm text-stone-300"
             >
-              <span
-                aria-hidden="true"
-                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-green-100 text-sm font-bold text-green-700"
-              >
-                ✓
-              </span>
-
-              <span className="text-sm font-medium text-slate-700">
-                {feature}
-              </span>
+              {system}
             </li>
           ))}
         </ul>

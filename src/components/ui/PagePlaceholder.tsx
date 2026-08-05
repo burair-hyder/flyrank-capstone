@@ -1,33 +1,53 @@
 type PagePlaceholderProps = {
+  eyebrow?: string;
   title: string;
   description: string;
-  badge?: string;
+  features?: readonly string[];
 };
 
 export default function PagePlaceholder({
+  eyebrow = "Casefile AI",
   title,
   description,
-  badge = "Foundation",
+  features = [],
 }: PagePlaceholderProps) {
   return (
-    <section className="space-y-6">
-      <header>
-        <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">
-          {badge}
-        </span>
+    <section className="space-y-8">
+      <header className="max-w-3xl">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-amber-400">
+          {eyebrow}
+        </p>
 
-        <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+        <h1 className="mt-4 text-3xl font-bold tracking-tight text-stone-100 sm:text-4xl">
           {title}
         </h1>
 
-        <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+        <p className="mt-4 text-base leading-7 text-stone-400">
           {description}
         </p>
       </header>
 
-      <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 shadow-sm sm:p-12">
-        <p className="text-center text-sm text-slate-500">
-          This screen will be completed during the core Build phase.
+      {features.length > 0 && (
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {features.map((feature) => (
+            <article
+              key={feature}
+              className="rounded-2xl border border-stone-800 bg-stone-900/70 p-5 shadow-lg shadow-black/10"
+            >
+              <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300">
+                ✓
+              </div>
+
+              <p className="font-medium text-stone-200">{feature}</p>
+            </article>
+          ))}
+        </div>
+      )}
+
+      <div className="rounded-2xl border border-dashed border-stone-700 bg-stone-900/50 p-8 text-center sm:p-12">
+        <p className="text-sm leading-6 text-stone-500">
+          This system is scaffolded for the Foundations phase and will be
+          implemented during the core Build and AI-integration phases.
         </p>
       </div>
     </section>
