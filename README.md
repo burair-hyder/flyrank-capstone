@@ -2,6 +2,34 @@
 
 This repository contains the capstone project being developed as part of the FlyRank internship track.
 
+## Capstone Project
+
+**Casefile AI** is an AI-powered browser detective game where players investigate structured mysteries through evidence collection, location exploration, suspect interviews, timeline analysis, contradiction discovery, and final theory submission.
+
+The current Foundations release contains the complete application skeleton, responsive navigation, routed investigation workspaces, environment-variable structure, and deployment health checks. Core gameplay and AI systems will be implemented incrementally during later phases.
+
+## Planned Core Systems
+
+- case library and difficulty levels
+- explorable investigation locations
+- structured evidence collection
+- AI-powered suspect interviews
+- evidence-board connections
+- contradiction discovery
+- case timeline analysis
+- detective notebook and theories
+- final accusation workflow
+- AI evaluation of player reasoning
+- generated mysteries with validation
+- detective profiles, ranks, and achievements
+
+## Live Deployment
+
+- **Live Application:** https://flyrank-capstone-beta.vercel.app/
+- **Repository:** https://github.com/burair-hyder/flyrank-capstone
+- **Health Check:** https://flyrank-capstone-beta.vercel.app/health
+- **Health API:** https://flyrank-capstone-beta.vercel.app/api/health
+
 ## Project Status
 
 The project is currently in the setup phase. The development environment, repository standards, Git workflow, and AI-assisted development process are being configured.
