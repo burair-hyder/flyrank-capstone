@@ -1,43 +1,29 @@
-# Dependencies
-node_modules/
+# dependencies
+/node_modules
 
-# Build output
-dist/
-build/
-.next/
-out/
+# next.js
+/.next/
+/out/
 
-# Environment variables
+# production
+/build
+
+# environment files
 .env
 .env.local
-.env.development
-.env.production
-.env.test
-.env.*
-!.env.example
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Logs
-logs/
-*.log
+# vercel
+.vercel
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
-pnpm-debug.log*
-
-# Testing
-coverage/
-
-# Cache
-.cache/
-.parcel-cache/
-
-# Editor settings
-.vscode/
-.idea/
-
-# Operating system files
-.DS_Store
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.temp
+yarn-error.log*
+.pnpm-debug.log*
